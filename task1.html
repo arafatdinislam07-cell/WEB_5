@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1 - Higher or Lower</title>
+  <link rel="stylesheet" href="style.css">
+<script src="task1.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <h1>Higher or Lower</h1>
+    <p class="rules" id="rules"></p>
+
+    <section class="stats" aria-label="Game state">
+      <p>Lives: <span id="lives" aria-live="polite"></span></p>
+      <p>Streak: <strong id="streak"></strong></p>
+      <p>Best streak: <strong id="best"></strong></p>
+    </section>
+
+    <section class="cards">
+      <article class="card" id="current-card">
+        <h2 id="current-name"></h2>
+        <p class="price" id="current-price"></p>
+      </article>
+      <article class="card" id="next-card">
+        <h2 id="next-name"></h2>
+        <p class="price" id="next-price">?</p>
+      </article>
+    </section>
+
+    <div class="buttons">
+      <button type="button" id="higher-btn">Higher</button>
+      <button type="button" id="lower-btn">Lower</button>
+    </div>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <button type="button" id="restart-btn" class="secondary">New game</button>
+  </main>
+</body>
+</html>

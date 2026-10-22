@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 2 - Kanban Board</title>
+  <link rel="stylesheet" href="task2.css">
+  <script src="task2.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <h1>Project Kanban</h1>
+
+    <section class="panel" aria-label="Progress">
+      <label for="progress">Finished cards: <strong id="progress-text"></strong></label>
+      <progress id="progress" max="100" value="0"></progress>
+    </section>
+
+    <section class="controls" aria-label="Filter and sort">
+      <div>
+        <label for="tag-filter">Tag</label>
+        <select id="tag-filter"></select>
+      </div>
+      <div>
+        <label for="search">Search by title</label>
+        <input id="search" type="search" autocomplete="off" placeholder="e.g. form">
+      </div>
+      <div>
+        <label for="sort-select">Sort</label>
+        <select id="sort-select">
+          <option value="none">Default order</option>
+          <option value="priority">By priority</option>
+        </select>
+      </div>
+    </section>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <p id="empty-message" class="empty-all" hidden>No cards found. Change the tag or the search text.</p>
+
+    <div id="board" class="board">
+      <section class="column" aria-labelledby="h-todo">
+        <h2 id="h-todo">To do <span id="count-todo" class="count"></span></h2>
+        <div id="col-todo" class="cards"></div>
+      </section>
+      <section class="column" aria-labelledby="h-progress">
+        <h2 id="h-progress">In progress <span id="count-progress" class="count"></span></h2>
+        <div id="col-progress" class="cards"></div>
+      </section>
+      <section class="column" aria-labelledby="h-done">
+        <h2 id="h-done">Done <span id="count-done" class="count"></span></h2>
+        <div id="col-done" class="cards"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

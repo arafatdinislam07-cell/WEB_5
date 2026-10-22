@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 3 - Ticket Builder</title>
+  <link rel="stylesheet" href="task3.css">
+  <script src="task3.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <h1>Ticket Builder</h1>
+
+    <div id="error-summary" class="summary" role="alert" tabindex="-1" hidden></div>
+
+    <div class="layout">
+      <form id="ticket-form">
+        <div class="field">
+          <label for="event">Event</label>
+          <select id="event" required aria-describedby="event-error"></select>
+          <p class="error" id="event-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="date">Date</label>
+          <input id="date" type="date" required aria-describedby="date-error">
+          <p class="error" id="date-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="type">Ticket type</label>
+          <select id="type" required aria-describedby="type-error"></select>
+          <p class="error" id="type-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="quantity">Quantity</label>
+          <input id="quantity" type="number" min="1" max="10" step="1" required aria-describedby="quantity-error">
+          <p class="error" id="quantity-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" maxlength="60" autocomplete="name" required aria-describedby="name-error">
+          <p class="error" id="name-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" required aria-describedby="email-error">
+          <p class="error" id="email-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="promo">Promo code (optional)</label>
+          <input id="promo" type="text" maxlength="20" autocomplete="off" aria-describedby="promo-error">
+          <p class="error" id="promo-error"></p>
+        </div>
+
+        <button type="submit">Get ticket</button>
+      </form>
+
+      <aside class="preview" aria-label="Ticket preview">
+        <h2>Preview</h2>
+        <dl>
+          <dt>Event</dt><dd id="pv-event"></dd>
+          <dt>Date</dt><dd id="pv-date"></dd>
+          <dt>Type</dt><dd id="pv-type"></dd>
+          <dt>Quantity</dt><dd id="pv-qty"></dd>
+          <dt>Name</dt><dd id="pv-name"></dd>
+          <dt>Email</dt><dd id="pv-email"></dd>
+          <dt>Promo</dt><dd id="pv-promo"></dd>
+          <dt>Total</dt><dd id="pv-total" class="total"></dd>
+        </dl>
+      </aside>
+    </div>
+
+    <section id="result" class="result" aria-live="polite"></section>
+  </main>
+</body>
+</html>
